@@ -14,8 +14,7 @@ CREATE TABLE vets (
 
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    kaiju_id INT REFERENCES kaiju(id) ON DELETE CASCADE
+    name VARCHAR(255)
 
 );
 
@@ -24,7 +23,7 @@ CREATE TABLE kaiju (
     name VARCHAR(255),
     dob VARCHAR(255),
     type VARCHAR(255),
-    owner_id INT REFERENCES owner(id) ON DELETE CASCADE,
+    owner VARCHAR(255),
     vet_id INT REFERENCES vet(id) ON DELETE CASCADE,
     treatment_notes TEXT
 

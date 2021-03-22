@@ -9,7 +9,7 @@ import repositories.owner_repository as owner_repository
 #CREATE
 def save(owner):
     sql = "INSERT INTO owners( name, kaiju_id ) VALUES ( %s, %s ) RETURNING *"
-    values = [owner.name, owner.kaiju_id]
+    values = [owner.name]
     results = run_sql(sql, values)
     id = results[0]['id']
     owner.id = id
@@ -23,7 +23,7 @@ def select_all_owners():
     results = run_sql(sql)
 
     for row in results:
-        owner = Owner(row['name'], row['kaiju_id'])
+        owner = Owner(row['name'])
         owner_list.append(owner)
     return owner_list
 
@@ -34,13 +34,13 @@ def select_single_owner(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        owner = Owner(owner.name, owner.kaiju_id)
+        owner = Owner(owner.name)
     return owner
 
 #UPDATE
 def update(owner):
     sql = "UPDATE owners SET ( name, kaiju_id, ) = (%s, %s) WHERE id = %s"
-    values = [owner.name, owner.kaiju_id]
+    values = [owner.name]
     run_sql(sql, values)
 
 #DELETE

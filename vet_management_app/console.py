@@ -20,13 +20,13 @@ kaiju_2 = Kaiju("King Kong", "1933", "Eight Wonder of the World",
 kaiju_3 = Kaiju("Slattern", "2020", "Category V",
                 "OWNER ID TO GO HERE", "VET ID TO GO HERE", "Nuke to the Face")
 
-owner_1 = Owner("Unregulated Nuclear Testing", "KAIJU ID TO GO HERE")
-owner_2 = Owner("Whatever foods are available on Skull Island", "KAIJU ID TO GO HERE")
-owner_3 = Owner("The Precursors", "KAIJU ID TO GO HERE")
+owner_1 = Owner("Unregulated Nuclear Testing")
+owner_2 = Owner("Whatever foods are available on Skull Island")
+owner_3 = Owner("The Precursors")
 
-vet_1 = Vet("Dr. Daisuke Serizawa", "KAIJU ID TO GO HERE", "OWNER ID TO GO HERE")
-vet_2 = Vet("Carl Denham", "KAIJU ID TO GO HERE", "OWNER ID TO GO HERE")
-vet_3 = Vet("Marshal Stacker Pentecost", "KAIJU ID TO GO HERE", "OWNER ID TO GO HERE")
+vet_1 = Vet("Dr. Daisuke Serizawa", "KAIJU ID TO GO HERE")
+vet_2 = Vet("Carl Denham", "KAIJU ID TO GO HERE")
+vet_3 = Vet("Marshal Stacker Pentecost", "KAIJU ID TO GO HERE")
 
 
 # Note: assign vet & owner to kaiju before running console.py

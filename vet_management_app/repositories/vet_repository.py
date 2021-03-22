@@ -8,8 +8,8 @@ import repositories.vet_repository as vet_repository
 
 #CREATE
 def save(vet):
-    sql = "INSERT INTO vets( name, kaiju_id, owner_id ) VALUES ( %s, %s, %s) RETURNING *"
-    values = [vet.name, vet.kaiju_id, vet.owner_id]
+    sql = "INSERT INTO vets( name, kaiju_id ) VALUES ( %s, %s ) RETURNING *"
+    values = [vet.name, vet.kaiju_id]
     results = run_sql(sql, values)
     id = results[0]['id']
     vet.id = id
@@ -23,7 +23,7 @@ def select_all_vets():
     results = run_sql(sql)
 
     for row in results:
-        vet = Vet(row['name'], row['kaiju_id'], row['owner_id'])
+        vet = Vet(row['name'], row['kaiju_id'])
         vet_list.append(vet)
     return vet_list
 
@@ -39,8 +39,8 @@ def select_single_vet(id):
 
 #UPDATE
 def update(vet):
-    sql = "UPDATE vets SET ( name, kaiju_id, owner_id ) = (%s, %s, %s) WHERE id = %s"
-    values = [vet.name, vet.kaiju_id, vet.owner_id]
+    sql = "UPDATE vets SET ( name, kaiju_id ) = ( %s, %s ) WHERE id = %s"
+    values = [vet.name, vet.kaiju_id]
     run_sql(sql, values)
 
 #DELETE

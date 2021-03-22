@@ -1,6 +1,4 @@
 #  Owner class, 1st full version
 class Owner:
-    def __init__(self, name, kaiju_owned):
+    def __init__(self, name):
         self.name = name
-        self.kaiju_owned = kaiju_owned
-
