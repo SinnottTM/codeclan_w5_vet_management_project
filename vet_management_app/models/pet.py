@@ -1,7 +1,10 @@
 #  Pet class, TBC
 class Pet:
-    def __init__(self, name, parameter_2, parameter_3, parameter_4):
+    def __init__(self, name, dob, pet_type, owner, treatment_notes, vet_assigned):
         self.name = name
-        self.parameter_2 = parameter_2
-        self.parameter_3 = parameter_3
-        self.parameter_4 = parameter_4
+        self.dob = dob
+        self.pet_type = pet_type
+        self.owner = owner
+        self.treatment_notes = treatment_notes
+        self.vet_assigned = vet_assigned
+
