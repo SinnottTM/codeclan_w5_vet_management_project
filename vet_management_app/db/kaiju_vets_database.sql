@@ -12,7 +12,7 @@ CREATE TABLE vets (
 
 );
 
-CREATE TABLE owner (
+CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     kaiju_id INT REFERENCES kaiju(id) ON DELETE CASCADE
