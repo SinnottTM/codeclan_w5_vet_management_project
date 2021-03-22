@@ -2,4 +2,4 @@
 class Vet:
     def __init__(self, name, kaiju_assigned):
         self.name = name
-        self.kaiju_assigned = kaiju_assigned
+        self.kaiju_assigned = None
