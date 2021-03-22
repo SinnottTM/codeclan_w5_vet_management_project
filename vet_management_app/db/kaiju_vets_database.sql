@@ -8,7 +8,7 @@ CREATE TABLE vets (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     kaiju_id INT REFERENCES kaiju(id) ON DELETE CASCADE, 
-    owner_id INT REFERENCES owner(id) ON DELETE CASCADE
+    owner VARCHAR(255)
 
 );
 
