@@ -8,7 +8,7 @@ import repositories.owner_repository as owner_repository
 
 #CREATE
 def save(owner):
-    sql = "INSERT INTO owners( name, kaiju_id ) VALUES ( %s, %s ) RETURNING *"
+    sql = "INSERT INTO owners( name ) VALUES ( %s ) RETURNING *"
     values = [owner.name]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -39,7 +39,7 @@ def select_single_owner(id):
 
 #UPDATE
 def update(owner):
-    sql = "UPDATE owners SET ( name, kaiju_id, ) = (%s, %s) WHERE id = %s"
+    sql = "UPDATE owners SET ( name ) = ( %s ) WHERE id = %s"
     values = [owner.name]
     run_sql(sql, values)
 

@@ -14,19 +14,19 @@ owner_repository.delete_all_owners()
 vet_repository.delete_all_vets()
 
 kaiju_1 = Kaiju("Godzilla", "1954", "Sea Monster",
-                "OWNER ID TO GO HERE", "VET ID TO GO HERE", "Oxygen Destroyer")
+                "", "", "Oxygen Destroyer")
 kaiju_2 = Kaiju("King Kong", "1933", "Eight Wonder of the World",
-                "OWNER ID TO GO HERE", "VET ID TO GO HERE", "Nuke to the Face")
+                "", "", "Nuke to the Face")
 kaiju_3 = Kaiju("Slattern", "2020", "Category V",
-                "OWNER ID TO GO HERE", "VET ID TO GO HERE", "Nuke to the Face")
+                "", "", "Nuke to the Face")
 
 owner_1 = Owner("Unregulated Nuclear Testing")
 owner_2 = Owner("Whatever foods are available on Skull Island")
 owner_3 = Owner("The Precursors")
 
-vet_1 = Vet("Dr. Daisuke Serizawa", "KAIJU ID TO GO HERE")
-vet_2 = Vet("Carl Denham", "KAIJU ID TO GO HERE")
-vet_3 = Vet("Marshal Stacker Pentecost", "KAIJU ID TO GO HERE")
+vet_1 = Vet("Dr. Daisuke Serizawa", "")
+vet_2 = Vet("Carl Denham", "")
+vet_3 = Vet("Marshal Stacker Pentecost", "")
 
 
 # Note: assign vet & owner to kaiju before running console.py
