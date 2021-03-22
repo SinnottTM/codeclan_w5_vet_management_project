@@ -1,5 +1,5 @@
 # run_sql, review for syntax etc.
-# Note: See about unique error messaging?
+# Note: See about unique error messaging? Also see for alternative ways to retrieve data?
 import psycopg2
 import psycopg2.extras as ext
 
