@@ -1,4 +1,5 @@
 # run_sql, review for syntax etc.
+# Note: See about unique error messaging?
 import psycopg2
 import psycopg2.extras as ext
 
@@ -7,7 +8,7 @@ def run_sql(sql, values=None):
     results = []
 
     try:
-        conn = psycopg2.connect("dbname='project_1_codecats_vet'")
+        conn = psycopg2.connect("dbname='kaiju_vets_database'")
         cur = conn.cursor(cursor_factory=ext.DictCursor)
         cur.execute(sql, values)
         conn.commit()
