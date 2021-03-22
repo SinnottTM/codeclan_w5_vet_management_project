@@ -1,13 +1,14 @@
-# pet controller, TBC
-# from flask import Flask, render_template, request, redirect
-# from flask import Blueprint
+# kaiju controller, TBC
 
-# from models.pet import Pet
-# import repositories.pet_repository as pet_repository
+from flask import Flask, render_template, request, redirect
+from flask import Blueprint
 
-# pets_blueprint = Blueprint("pets", __name__)
+from models.kaiju import Kaiju
+import repositories.kaiju_repository as kaiju_repository
 
-# @pets_blueprint.route("/pets")
-# def pets():
-#     pets = pet_repository.select_all()
-#     return render_template("pets/index.html", pets=pets)
+kaiju_blueprint = Blueprint("kaiju", __name__)
+
+@pets_blueprint.route("/kaiju")
+def kaiju():
+    kaiju = kaiju_repository.select_all()
+    return render_template("kaiju/index.html", kaiju=kaiju)
