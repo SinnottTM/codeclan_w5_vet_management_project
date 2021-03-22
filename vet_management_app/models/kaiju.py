@@ -7,4 +7,9 @@ class Kaiju:
         self.kaiju_owner = kaiju_owner
         self.kaiju_vet = kaiju_vet
         self.treatment_notes = treatment_notes
-        
+
+    def assign_vet(self, kaiju_vet):
+        self.kaiju_vet = kaiju_vet
+
+    def assign_owner(self, kaiju_owner):
+        self.kaiju_owner = kaiju_owner
