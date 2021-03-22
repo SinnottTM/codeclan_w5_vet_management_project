@@ -8,7 +8,7 @@ import repositories.kaiju_repository as kaiju_repository
 
 kaiju_blueprint = Blueprint("kaiju", __name__)
 
-@pets_blueprint.route("/kaiju")
+@kaiju_blueprint.route("/kaiju")
 def kaiju():
     kaiju = kaiju_repository.select_all()
     return render_template("kaiju/index.html", kaiju=kaiju)
