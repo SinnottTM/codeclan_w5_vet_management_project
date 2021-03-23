@@ -1,4 +1,4 @@
-# console file, TBC
+# console file, appears to be working fine
 import pdb
 
 from models.kaiju import Kaiju
@@ -10,27 +10,22 @@ kaiju_repository.delete_all_kaiju()
 vet_repository.delete_all_vets()
 
 kaiju_1 = Kaiju("Godzilla", "1954", "Sea Monster",
-                "", "Oxygen Destroyer")
+                 "Oxygen Destroyer")
 kaiju_2 = Kaiju("King Kong", "1933", "Eight Wonder of the World",
-                "", "Beauty (what slayed the beast")
+                "Beauty (what slayed the beast)")
 kaiju_3 = Kaiju("Slattern", "2020", "Category V",
-                "", "Gypsy Danger's nuclear turbine to the chest")
+                 "Gypsy Danger's nuclear turbine to the chest")
 
-vet_1 = Vet("Dr. Daisuke Serizawa", None)
-vet_2 = Vet("Carl Denham", None)
-vet_3 = Vet("Marshal Stacker Pentecost", None)
+kaiju_repository.save(kaiju_1)
+kaiju_repository.save(kaiju_2)
+kaiju_repository.save(kaiju_3)
 
-
-# Note: assign vet to kaiju before running console.py
+vet_1 = Vet("Dr. Daisuke Serizawa", kaiju_1)
+vet_2 = Vet("Carl Denham", kaiju_2)
+vet_3 = Vet("Marshal Stacker Pentecost", kaiju_3)
 
 vet_repository.save(vet_1)
 vet_repository.save(vet_2)
 vet_repository.save(vet_3)
 
-kaiju_1.assign_vet(vet_1)
-kaiju_2.assign_vet(vet_2)
-kaiju_3.assign_vet(vet_3)
-
-kaiju_repository.save(kaiju_1)
-kaiju_repository.save(kaiju_2)
-kaiju_repository.save(kaiju_3)
+pdb.set_trace()
