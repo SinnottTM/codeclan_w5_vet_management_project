@@ -6,4 +6,3 @@ class Kaiju:
         self.dob = dob
         self.kaiju_type = kaiju_type
         self.treatment_notes = treatment_notes
-

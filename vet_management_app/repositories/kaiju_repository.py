@@ -6,7 +6,7 @@ from models.kaiju import Kaiju
 # CRUD
 
 #CREATE
-def save(kaiju):
+def save_kaiju(kaiju):
     sql = "INSERT INTO kaiju( name, dob, kaiju_type, treatment_notes ) VALUES ( %s, %s, %s, %s ) RETURNING *"
     values = [kaiju.name, kaiju.dob, kaiju.kaiju_type, kaiju.treatment_notes]
     results = run_sql(sql, values)
@@ -48,7 +48,6 @@ def update(kaiju):
 def delete_all_kaiju():
     sql = "DELETE FROM kaiju"
     run_sql(sql)
-
 
 def delete_single_kaiju(id):
     sql = "DELETE FROM kaiju WHERE id = %s"

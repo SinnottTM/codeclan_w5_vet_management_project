@@ -8,7 +8,7 @@ import repositories.kaiju_repository as kaiju_repository
 # CRUD
 
 #CREATE
-def save(vet):
+def save_vet(vet):
     sql = "INSERT INTO vets( name, kaiju_id ) VALUES ( %s, %s ) RETURNING *"
     values = [vet.name, vet.kaiju.id]
     results = run_sql(sql, values)
@@ -40,7 +40,7 @@ def select_single_vet(id):
     return vet
 
 #UPDATE
-def update(vet):
+def update_vet(vet):
     sql = "UPDATE vets SET ( name, kaiju_id ) = ( %s, %s ) WHERE id = %s"
     values = [vet.name, vet.kaiju.id, vet.id]
     run_sql(sql, values)
@@ -49,7 +49,6 @@ def update(vet):
 def delete_all_vets():
     sql = "DELETE FROM vets"
     run_sql(sql)
-
 
 def delete_single_vet(id):
     sql = "DELETE FROM vets WHERE id = %s"
