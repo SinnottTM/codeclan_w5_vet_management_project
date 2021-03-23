@@ -1,5 +1,4 @@
-# run_sql, review for syntax etc.
-# Note: See about unique error messaging? Also see for alternative ways to retrieve data?
+# run_sql, appears to be working fine
 import psycopg2
 import psycopg2.extras as ext
 
