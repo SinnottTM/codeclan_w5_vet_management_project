@@ -1,12 +1,9 @@
-#  Kaiju class, 2nd full version
+#  Kaiju class, working fine
 class Kaiju:
-    def __init__(self, name, dob, kaiju_type, kaiju_vet, treatment_notes):
+    def __init__(self, name, dob, kaiju_type, treatment_notes, id = None):
+        self.id = id
         self.name = name
         self.dob = dob
         self.kaiju_type = kaiju_type
-        self.kaiju_vet = None
         self.treatment_notes = treatment_notes
-
-    def assign_vet(self, kaiju_vet):
-        self.kaiju_vet = kaiju_vet
 

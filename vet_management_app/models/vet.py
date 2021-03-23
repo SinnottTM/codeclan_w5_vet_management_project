@@ -1,6 +1,7 @@
-#  Vet class, 1st full version
+#  Vet class, working fine
 class Vet:
-    def __init__(self, name, kaiju_id):
+    def __init__(self, name, kaiju, id = None):
+        self.id = id
         self.name = name
-        self.kaiju_id = None
+        self.kaiju = kaiju
         
