@@ -2,46 +2,30 @@
 import pdb
 
 from models.kaiju import Kaiju
-from models.owner import Owner
 from models.vet import Vet
 import repositories.kaiju_repository as kaiju_repository
-import repositories.owner_repository as owner_repository
 import repositories.vet_repository as vet_repository
 
-
 kaiju_repository.delete_all_kaiju()
-owner_repository.delete_all_owners()
 vet_repository.delete_all_vets()
 
 kaiju_1 = Kaiju("Godzilla", "1954", "Sea Monster",
-                "", "", "Oxygen Destroyer")
+                "", "Oxygen Destroyer")
 kaiju_2 = Kaiju("King Kong", "1933", "Eight Wonder of the World",
-                "", "", "Nuke to the Face")
+                "", "Beauty (what slayed the beast")
 kaiju_3 = Kaiju("Slattern", "2020", "Category V",
-                "", "", "Nuke to the Face")
+                "", "Gypsy Danger's nuclear turbine to the chest")
 
-owner_1 = Owner("Unregulated Nuclear Testing")
-owner_2 = Owner("Whatever foods are available on Skull Island")
-owner_3 = Owner("The Precursors")
-
-vet_1 = Vet("Dr. Daisuke Serizawa", "")
-vet_2 = Vet("Carl Denham", "")
-vet_3 = Vet("Marshal Stacker Pentecost", "")
+vet_1 = Vet("Dr. Daisuke Serizawa", None)
+vet_2 = Vet("Carl Denham", None)
+vet_3 = Vet("Marshal Stacker Pentecost", None)
 
 
-# Note: assign vet & owner to kaiju before running console.py
-
-owner_repository.save(owner_1)
-owner_repository.save(owner_2)
-owner_repository.save(owner_3)
+# Note: assign vet to kaiju before running console.py
 
 vet_repository.save(vet_1)
 vet_repository.save(vet_2)
 vet_repository.save(vet_3)
-
-kaiju_1.assign_owner(owner_1)
-kaiju_2.assign_owner(owner_2)
-kaiju_3.assign_owner(owner_3)
 
 kaiju_1.assign_vet(vet_1)
 kaiju_2.assign_vet(vet_2)
