@@ -1,0 +1,14 @@
+<!-- Edit Kaiju HTML, first draft -->
+{% extends "base.html" %}
+{% block content %}
+
+  <div>
+    <p>{{kaiju.name}}</p>
+    <hr>
+    <p>{{kaiju.dob}}</p>
+    <p>{{kaiju.type}}</p>
+    <p>{{kaiju.treatment_notes}}</p>
+    <p><a href="/kaiju/{{kaiju.id}}/edit">Edit</a></p>
+  </div>
+
+{% endblock %}
