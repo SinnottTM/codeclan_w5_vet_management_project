@@ -1,35 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/kaiju" method="post">
+<h3>Kaiju New Page</h3>
+<!-- <form action="/kaiju" method="post">
 
   <div>
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" placeholder="Title" required autofocus>
+    <label for="name">Name:</label>
+    <input type="text" id="title" name="name" placeholder="Name" required autofocus>
   </div>
 
   <div>
-    <label for="genre">Genre:</label>
-    <input type="text" id="genre" name="genre" placeholder="Genre" required autofocus>
+    <label for="dob">DOB:</label>
+    <input type="text" id="genre" name="dob" placeholder="DOB" required autofocus>
   </div>
 
   <div>
-    <label for="publisher">Publisher:</label>
+    <label for="kaiju_type">Kaiju:</label>
     <input type="text" id="publisher" name="publisher" placeholder="Publisher" required>
   </div>
 
-
   <div>
-    <label for="author">Author:</label>
-    <select id="author" name="author_id">
-      {% for author in all_authors %}
-        <option value="{{ author.id }}">{{ author.full_name() }}</option>
+    <label for="vet">Vet:</label>
+    <select id="author" name="vet_id">
+      {% for vet in all_vets %}
+        <option value="{{ vet.id }}">{{ vet.name }}</option>
       {% endfor %}
     </select>
   </div>
 
-  <button type="submit">Add Book</button>
+  <button type="submit">Add Kaiju</button>
 
-</form>
+</form> -->
 
 {% endblock %}

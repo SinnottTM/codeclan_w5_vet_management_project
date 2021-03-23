@@ -1,24 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for kaiju in all_kaiju %}
-<div class="kaiju">
-    <div class="content">
-        <a href="/kaiju/{{kaiju.id}}">{{kaiju.name}}</a>
-        <div class="title">
-            {{kaiju.type}}
-            <!-- <span class="random">{{book.publisher}}</span> -->
-            <!-- <p><i>{{book.author.full_name()}}</i></p> -->
-        </div>
-        <div class="buttons">
+<!-- <h3>Kaiju Index Page</h3> -->
 
-            <form class="delete-form" action="/kaiju/{{kaiju.id}}/delete" method="POST">
-                <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red"
-                        aria-hidden="true"></i></button>
-            </form>
-        </div>
-    </div>
-</div>
-{% endfor %}
+<header>
+    <h3>All kaiju</h3>
+</header>
+
+<a href="/kaiju/index" class="functional_button">Add new Kaiju</a>
 
 {% endblock %}
+
