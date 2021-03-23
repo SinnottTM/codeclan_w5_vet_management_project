@@ -20,12 +20,13 @@ def kaiju_all():
         print(error)
         return render_template('kaiju/error1.html')
 
-# SHOW new vets. GET method (possably belongs in other controller?)
+# SHOW new vets. GET method
 @kaiju_blueprint.route("/kaiju/new", methods=['GET'])
 def new_kaiju_to_vet():
     try:
+        kaiju = kaiju_repository.select_all_kaiju()
         vets = vet_repository.select_all_vets()
-        return render_template("kaiju/new.html", all_vets = vets)
+        return render_template("kaiju/new.html", all_kaiju = kaiju, all_vets = vets)
     except (Exception) as error:
         print(error)
         return render_template('kaiju/error2.html')
@@ -106,7 +107,7 @@ def delete_all_kaiju():
 
 @kaiju_blueprint.route("/kaiju/facts")
 def kaiju_facts():
-    return render_template('facts/index.html')
+    return render_template('kaiju/facts.html')
 
 @kaiju_blueprint.route("/kaiju/error1")
 def error_1_kaiju():
