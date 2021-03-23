@@ -11,8 +11,7 @@ def save(vet):
     sql = "INSERT INTO vets( name, kaiju_id ) VALUES ( %s, %s ) RETURNING *"
     values = [vet.name, vet.kaiju_id]
     results = run_sql(sql, values)
-    id = results[0]['id']
-    vet.id = id
+    vet.id = results[0]['id']
     return vet
 
 #READ
