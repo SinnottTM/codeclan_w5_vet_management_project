@@ -1,8 +1,9 @@
-# run_test file, TBC
+# run_test file, working fine
 
-# import unittest
+import unittest
 
-# from tests.file_name import TestClass (same as file name)
+from tests.kaiju_test import TestKaiju
+from tests.vet_test import TestVet
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()
