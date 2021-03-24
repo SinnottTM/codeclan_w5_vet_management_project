@@ -15,17 +15,21 @@ kaiju_2 = Kaiju("King Kong", "1933", "Eight Wonder of the World",
                 "Beauty (what slayed the beast)")
 kaiju_3 = Kaiju("Slattern", "2020", "Category V",
                  "Gypsy Danger's nuclear turbine to the chest")
+kaiju_4 = Kaiju("Shin_Godzilla", "2016", "Sea Monster",
+                "Oral Coagulant Injection")
 
-kaiju_repository.save(kaiju_1)
-kaiju_repository.save(kaiju_2)
-kaiju_repository.save(kaiju_3)
+
+kaiju_repository.save_kaiju(kaiju_1)
+kaiju_repository.save_kaiju(kaiju_2)
+kaiju_repository.save_kaiju(kaiju_3)
+kaiju_repository.save_kaiju(kaiju_4)
 
 vet_1 = Vet("Dr. Daisuke Serizawa", kaiju_1)
 vet_2 = Vet("Carl Denham", kaiju_2)
 vet_3 = Vet("Marshal Stacker Pentecost", kaiju_3)
 
-vet_repository.save(vet_1)
-vet_repository.save(vet_2)
-vet_repository.save(vet_3)
+vet_repository.save_vet(vet_1)
+vet_repository.save_vet(vet_2)
+vet_repository.save_vet(vet_3)
 
 pdb.set_trace()

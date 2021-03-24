@@ -1,4 +1,4 @@
-# Vet repo, got assist by Malcolm, will assume all current code is working fine!
+# Vet repo.
 from db.run_sql import run_sql
 
 from models.vet import Vet
@@ -16,17 +16,17 @@ def save_vet(vet):
     # return vet
 
 #READ
-def select_all_vets():
-    vet_list = []
+# def select_all_vets():
+#     vet_list = []
 
-    sql = "SELECT * FROM vets"
-    results = run_sql(sql)
+#     sql = "SELECT * FROM vets"
+#     results = run_sql(sql)
 
-    for row in results:
-        kaiju = kaiju_repository.select_single_kaiju(row["kaiju_id"])
-        vet = Vet(row['name'], kaiju, row['id'])
-        vet_list.append(vet)
-    return vet_list
+#     for row in results:
+#         kaiju = kaiju_repository.select_single_kaiju(row["kaiju_id"])
+#         vet = Vet(row['name'], kaiju, row['id'])
+#         vet_list.append(vet)
+#     return vet_list
 
 def select_single_vet(id):
     vet = None
@@ -40,17 +40,17 @@ def select_single_vet(id):
     return vet
 
 #UPDATE
-def update_vet(vet):
-    sql = "UPDATE vets SET ( name, kaiju_id ) = ( %s, %s ) WHERE id = %s"
-    values = [vet.name, vet.kaiju.id, vet.id]
-    run_sql(sql, values)
+# def update_vet(vet):
+#     sql = "UPDATE vets SET ( name, kaiju_id ) = ( %s, %s ) WHERE id = %s"
+#     values = [vet.name, vet.kaiju.id, vet.id]
+#     run_sql(sql, values)
 
 #DELETE
 def delete_all_vets():
     sql = "DELETE FROM vets"
     run_sql(sql)
 
-def delete_single_vet(id):
-    sql = "DELETE FROM vets WHERE id = %s"
-    values = [id]
-    run_sql(sql, values)
+# def delete_single_vet(id):
+#     sql = "DELETE FROM vets WHERE id = %s"
+#     values = [id]
+#     run_sql(sql, values)
