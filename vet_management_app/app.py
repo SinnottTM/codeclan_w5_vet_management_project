@@ -7,7 +7,7 @@ from controllers.vet_controller import vet_blueprint
 app = Flask(__name__)
 
 app.register_blueprint(kaiju_blueprint)
-# app.register_blueprint(vet_blueprint)
+app.register_blueprint(vet_blueprint)
 
 @app.route('/')
 def home():
