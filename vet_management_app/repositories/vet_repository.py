@@ -9,8 +9,8 @@ import repositories.kaiju_repository as kaiju_repository
 
 #CREATE
 def save_vet(vet):
-    sql = "INSERT INTO vets( name, kaiju_id ) VALUES ( %s, %s ) RETURNING *"
-    values = [vet.name, vet.kaiju.id]
+    sql = "INSERT INTO vets( name ) VALUES ( %s ) RETURNING *"
+    values = [vet.name]
     results = run_sql(sql, values)
     vet.id = results[0]['id']
     # return vet
@@ -35,8 +35,7 @@ def select_single_vet(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        kaiju = kaiju_repository.select_single_kaiju(result["kaiju_id"])
-        vet = Vet(result['name'], kaiju, result['id'])
+        vet = Vet(result['name'], result['id'])
     return vet
 
 #UPDATE

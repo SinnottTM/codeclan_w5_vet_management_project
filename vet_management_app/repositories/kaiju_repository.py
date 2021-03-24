@@ -7,8 +7,8 @@ from models.kaiju import Kaiju
 
 #CREATE
 def save_kaiju(kaiju):
-    sql = "INSERT INTO kaiju( name, dob, kaiju_type, treatment_notes ) VALUES ( %s, %s, %s, %s ) RETURNING *"
-    values = [kaiju.name, kaiju.dob, kaiju.kaiju_type, kaiju.treatment_notes]
+    sql = "INSERT INTO kaiju( name, dob, kaiju_type, treatment_notes, vet_id ) VALUES ( %s, %s, %s, %s, %s ) RETURNING *"
+    values = [kaiju.name, kaiju.dob, kaiju.kaiju_type, kaiju.treatment_notes, kaiju.vet_id]
     results = run_sql(sql, values)
     id = results[0]['id']
     kaiju.id = id
@@ -23,7 +23,7 @@ def select_all_kaiju():
 
     for row in results:
         kaiju = Kaiju(row['name'], row['dob'], row['kaiju_type'],
-                        row['treatment_notes'], row['id'])
+                      row['treatment_notes'], row['vet_id'], row['id'])
         kaiju_list.append(kaiju)
     return kaiju_list
 
@@ -34,14 +34,15 @@ def select_single_kaiju(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        kaiju = Kaiju(result['kaiju.name'], result['kaiju.dob'], result['kaiju.kaiju_type'], result['kaiju.treatment_notes'], result['kaiju.id'])
+        kaiju = Kaiju(result['kaiju.name'], result['kaiju.dob'], result['kaiju.kaiju_type'],
+                      result['kaiju.treatment_notes'], result['kaiju.vet_id'], result['kaiju.id'])
     return kaiju
 
 #UPDATE
 def update(kaiju):
-    sql = "UPDATE kaiju SET (name, dob, kaiju_type, treatment_notes) = (%s, %s, %s, %s ) WHERE id = %s"
+    sql = "UPDATE kaiju SET (name, dob, kaiju_type, treatment_notes, vet_id) = (%s, %s, %s, %s, %s ) WHERE id = %s"
     values = [kaiju.name, kaiju.dob, kaiju.kaiju_type,
-              kaiju.treatment_notes, kaiju.id]
+              kaiju.treatment_notes, kaiju.vet_id, kaiju.id]
     run_sql(sql, values)
 
 #DELETE
