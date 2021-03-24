@@ -6,13 +6,16 @@
   <h3>Kaiju Show Page</h3>
 </header>
 
-  <div>
-    <p>{{kaiju.name}}</p>
-    <hr>
-    <p>{{kaiju.dob}}</p>
-    <p>{{kaiju.type}}</p>
-    <p>{{kaiju.treatment_notes}}</p>
-    <p><a href="/kaiju/{{kaiju.id}}/edit">Edit</a></p>
-  </div>
-
+  {% for kaiju in sole_kaiju %}
+    <div>
+      <p>{{kaiju.name}}</p>
+      <p>{{kaiju.dob}}</p>
+      <p>{{kaiju.type}}</p>
+      <p>{{kaiju.treatment_notes}}</p>
+      <p>{{kaiju.vet.name}}</p>
+      <p>{{kaiju.registered}}</p>
+  
+    <!-- <p><a href="/kaiju/{{kaiju.id}}/edit">Edit</a></p> -->
+    </div>
+  {% endfor %}
 {% endblock %}

@@ -3,39 +3,45 @@
 
 <h3>Kaiju Edit Page</h3>
 
-<form action="/kaiju/{{kaiju.id}}" method="POST">
+{}
+<form action="/kaiju/edit/{{kaiju.id}}" method="POST">
 
   <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{kaiju.name}}" required>
+    <input type="text" id="name" name="name" value="{{kaiju.name}}">
   </div>
 
   <div>
     <label for="dob">DOB:</label>
-    <input type="text" id="dob" name="dob" value="{{kaiju.dob}}" required autofocus>
+    <input type="text" id="dob" name="dob" value="{{kaiju.dob}}">
   </div>
 
   <div>
     <label for="kaiju_type">Kaiju Type:</label>
-    <input type="text" id="kaiju_type" name="kaiju_type" value="{{kaiju.kaiju_type}}" required autofocus>
+    <input type="text" id="kaiju_type" name="kaiju_type" value="{{kaiju.kaiju_type}}">
   </div>
 
   <div>
     <label for="treatment_notes">Treatment Notes:</label>
-    <input type="text" id="treatment_notes" name="treatment_notes" value="{{kaiju.treatment_notes}}" required autofocus>
+    <input type="text" id="treatment_notes" name="treatment_notes" value="{{kaiju.treatment_notes}}">
   </div>
 
-  <!-- <div>
+  <div>
     <label for="vet">Vet:</label>
-    <select id="vet" name="vet_id">
+    <select id="vet" name="vet">
       {% for vet in all_vets %}
         <option value="{{ vet.id }}"
-          {% if book.author.id == vet.id %} selected="selected"{% endif %}>
-            {{ vet.name }}
+          {% if kaiju.vet.id == vet.id %} selected="selected"{% endif %}>
+          {{ vet.name }}
         </option>
       {% endfor %}
     </select>
-  </div> -->
+  </div>
+
+  <div>
+    <label for="registered">Registered:</label>
+    <input type="checkbox" id="registered" name="registered"value="{{kaiju.registered}}">
+  </div>
 
   <button type="submit">Update Kaiju</button>
 
