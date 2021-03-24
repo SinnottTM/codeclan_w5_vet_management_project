@@ -15,3 +15,4 @@ CREATE TABLE kaiju (
     vet_id INT REFERENCES vets(id) ON DELETE CASCADE,
     registered BOOLEAN
 );
+

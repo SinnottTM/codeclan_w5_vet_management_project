@@ -24,9 +24,8 @@ def kaiju_all():
 @kaiju_blueprint.route("/kaiju/new", methods=['GET'])
 def new_kaiju_to_vet():
     try:
-        kaiju = kaiju_repository.select_all_kaiju()
         vets = vet_repository.select_all_vets()
-        return render_template("kaiju/new.html", all_kaiju = kaiju, all_vets = vets)
+        return render_template("kaiju/new.html", all_vets = vets)
     except (Exception) as error:
         print(error)
         return render_template('kaiju/error2.html')
@@ -77,8 +76,9 @@ def update_kaiju(id):
         dob = request.form['dob']
         kaiju_type = request.form['kaiju_type']
         treatment_notes = request.form['treatment_notes']
+        registered = request.form['registered']
         vet = vet_repository.select_single_vet(request.form['vet_id'])
-        kaiju = Kaiju(name, dob, kaiju_type, treatment_notes, vet)
+        kaiju = Kaiju(name, dob, kaiju_type, treatment_notes, vet, registered)
         kaiju_repository.update_kaiju(kaiju)
         return redirect('/kaiju')
     except (Exception) as error:
