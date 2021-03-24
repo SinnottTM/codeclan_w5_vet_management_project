@@ -1,10 +1,9 @@
-# Vet repo, got assist by Malcolm, will assume all current code is working fine!
 from db.run_sql import run_sql
 
 from models.kaiju import Kaiju
+from models.vet import Vet
 
 # CRUD
-
 #CREATE
 def save_kaiju(kaiju):
     sql = "INSERT INTO kaiju( name, dob, kaiju_type, treatment_notes, vet_id, registered ) VALUES ( %s, %s, %s, %s, %s ) RETURNING *"
