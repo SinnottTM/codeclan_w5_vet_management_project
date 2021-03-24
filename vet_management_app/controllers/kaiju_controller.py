@@ -1,5 +1,3 @@
-# kaiju controller, under construction
-
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 
@@ -39,7 +37,8 @@ def create_kaiju():
         kaiju_type = request.form['kaiju_type']
         treatment_notes = request.form['treatment_notes']
         vet = vet_repository.select_single_vet(request.form['vet_id'])
-        kaiju = Kaiju(name, dob, kaiju_type, treatment_notes, vet)
+        registered = request.form['registered']
+        kaiju = Kaiju(name, dob, kaiju_type, treatment_notes, vet, registered)
         kaiju_repository.save_kaiju(kaiju)
         return redirect('/kaiju')
     except (Exception) as error:
