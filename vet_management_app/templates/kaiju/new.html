@@ -5,5 +5,34 @@
   <h3>Kaiju New Page</h3>
 </header>
 
+<form action="/kaiju" method="POST">
 
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{kaiju.name}}" required>
+  </div>
+  
+  <div>
+    <label for="dob">DOB:</label>
+    <input type="text" id="dob" name="dob" value="{{kaiju.dob}}" required autofocus>
+  </div>
+  
+  <div>
+    <label for="kaiju_type">Kaiju Type:</label>
+    <input type="text" id="kaiju_type" name="kaiju_type" value="{{kaiju.kaiju_type}}" required autofocus>
+  </div>
+  
+  <div>
+    <label for="treatment_notes">Treatment Notes:</label>
+    <input type="text" id="treatment_notes" name="treatment_notes" value="{{kaiju.treatment_notes}}" required autofocus>
+  </div>
+
+  <!-- <div>
+    <label for="vet">Vet:</label>
+    <input type="text" id="vet" name="vet" placeholder="vet" required>
+  </div> -->
+
+  <button type="submit">Add Kaiju</button>
+
+</form>
 {% endblock %}
