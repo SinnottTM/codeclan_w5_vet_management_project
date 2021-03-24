@@ -15,7 +15,7 @@ kaiju_blueprint = Blueprint("kaiju", __name__)
 def kaiju_all():
     try:
         kaiju = kaiju_repository.select_all_kaiju()
-        return render_template("kaiju/index.html", kaiju=kaiju)
+        return render_template("kaiju/index.html", all_kaiju=kaiju)
     except (Exception) as error:
         print(error)
         return render_template('kaiju/error1.html')
@@ -116,3 +116,11 @@ def error_1_kaiju():
 @kaiju_blueprint.route("/kaiju/error2")
 def error_2_kaiju():
     return render_template('kaiju/error2.html')
+
+@kaiju_blueprint.route("/kaiju/meetthevetteam")
+def kaiju_meet_the_vet_team():
+    return render_template('kaiju/meetthevetteam.html')
+
+@kaiju_blueprint.route("/kaiju/safetyadvice")
+def kaiju_safety_advice():
+    return render_template('kaiju/safetyadvice.html')
