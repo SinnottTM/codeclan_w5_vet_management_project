@@ -42,7 +42,7 @@ def select_single_kaiju(id):
 
 #UPDATE
 def update(kaiju):
-    sql = "UPDATE kaiju SET (name, dob, kaiju_type, treatment_notes, vet_id, registered) = (%s, %s, %s, %s, %s ) WHERE id = %s"
+    sql = "UPDATE kaiju SET (name, dob, kaiju_type, treatment_notes, vet_id, registered) = (%s, %s, %s, %s, %s, %s ) WHERE id = %s"
     values = [kaiju.name, kaiju.dob, kaiju.kaiju_type,
               kaiju.treatment_notes, kaiju.vet.id, kaiju.registered, kaiju.id]
     run_sql(sql, values)

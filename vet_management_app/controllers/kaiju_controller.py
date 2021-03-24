@@ -50,7 +50,7 @@ def create_kaiju():
 def show_kaiju(id):
     try:
           kaiju = kaiju_repository.select_single_kaiju(id)
-          return render_template('kaiju/show.html', kaiju=kaiju)
+          return render_template('kaiju/show.html', sole_kaiju=kaiju)
     except (Exception) as error:
           print(error)
           return render_template('kaiju/error1.html')
@@ -62,7 +62,7 @@ def edit_kaiju(id):
     try:
         kaiju = kaiju_repository.select_single_kaiju(id)
         vets = vet_repository.select_all_vets()
-        return render_template('kaiju/edit.html', kaiju = kaiju, all_vets = vets)
+        return render_template('kaiju/edit.html', sole_kaiju=kaiju, all_vets=vets)
     except (Exception) as error:
           print(error)
           return render_template('kaiju/error2.html')
