@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-<header>
+<header class=page_name>
     <h3>Kaiju Index Page</h3>
 </header>
-<!-- <a href="/kaiju/index" class="functional_button">Kaiju Index</a> -->
 
-    {% for kaiju in all_kaiju %}
+<pre class="tab">  KAIJU NAME              KAIJU DOB               KAIJU TYPE              KAIJU TREATMENT NOTES   KAIJU VET ID           KAIJU REGISTRATION</pre>
+{% for kaiju in all_kaiju %}
 
+<section class="index"> 
         <p>{{kaiju.name}}</p>
         <p>{{kaiju.dob}}</p>
         <p>{{kaiju.kaiju_type}}</p>
         <p>{{kaiju.treatment_notes}}</p>
-        <p>{{kaiju.vet_id}}</p>
+        <p>{{kaiju.vet.name}}</p>
         <p>{{kaiju.registered}}</p>
+</section>
     
     {% endfor %}
 {% endblock %}

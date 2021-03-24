@@ -6,7 +6,13 @@
   <h3>Kaiju Show Page</h3>
 </header>
 
-  {% for kaiju in sole_kaiju %}
+  <div>
+    <label for="id">The Kaiju ID</label>
+    <input type="search" id="id">
+    <button type="button">Enter ID</button>
+  </div>
+
+  <!-- {% for kaiju in sole_kaiju %}
     <div>
       <p>{{kaiju.name}}</p>
       <p>{{kaiju.dob}}</p>
@@ -15,7 +21,6 @@
       <p>{{kaiju.vet.name}}</p>
       <p>{{kaiju.registered}}</p>
   
-    <!-- <p><a href="/kaiju/{{kaiju.id}}/edit">Edit</a></p> -->
     </div>
-  {% endfor %}
+  {% endfor %} -->
 {% endblock %}

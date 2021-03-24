@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header class=page_name>
+<h3>Kaiju update Page</h3>
+</header>
+
+{% for kaiju in all_kaiju %}
+<section class="table">
+<form action="/update{{kaiju.id}}" method="POST">
+
+  <div>
+    <label for="id">The Kaiju ID</label>
+    <input type="search" placeholder="Name" name="name" value={{kaiju_to_update.name}}>
+    <input type="submit" value="Update" class="btn btn-secondary">
+  
+</form>
+</div>
+</section>
+{% endfor %}
+
+{% endblock %}
