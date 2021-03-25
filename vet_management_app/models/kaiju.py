@@ -1,4 +1,3 @@
-#  Kaiju class, working fine
 class Kaiju:
     def __init__(self, name, dob, kaiju_type, treatment_notes, vet, registered = False, id = None):
         self.id = id
