@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-# codeclan_w5_vet_management_project
-
->>>>>>> 7de025cb97610e46bf6fa44e861e16a84f2e3bab
 Vet Management App Project
 
 This is the first full CodeClan project. This took place five weeks into the course and was designed to utilise my course-work up to this point.
