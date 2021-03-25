@@ -54,21 +54,30 @@ def show_kaiju(id):
     except (Exception) as error:
           print(error)
           return render_template('kaiju/error1.html')
-# Look into  ('kaiju/error.html', error=error.context)
 
 # EDIT kaiju via their id. GET method 
-@kaiju_blueprint.route("/kaiju/<id>/edit", methods=['GET'])
-def edit_kaiju(id):
+# @kaiju_blueprint.route("/kaiju/edit/<id>", methods=['GET'])
+# def edit_kaiju(id):
+#     try:
+#         kaiju = kaiju_repository.select_single_kaiju(id)
+#         vets = vet_repository.select_all_vets()
+#         return render_template('kaiju/edit.html', sole_kaiju=kaiju, all_vets=vets)
+#     except (Exception) as error:
+#           print(error)
+#           return render_template('kaiju/error2.html')
+
+@kaiju_blueprint.route("/kaiju/edit", methods=['GET'])
+def edit_kaiju():
     try:
-        kaiju = kaiju_repository.select_single_kaiju(id)
+        kaiju = kaiju_repository.select_all_kaiju()
         vets = vet_repository.select_all_vets()
-        return render_template('kaiju/edit.html', sole_kaiju=kaiju, all_vets=vets)
+        return render_template('kaiju/edit.html', all_kaiju=kaiju, all_vets=vets)
     except (Exception) as error:
           print(error)
           return render_template('kaiju/error2.html')
 
 # UPDATE kaiju via their id. POST method
-@kaiju_blueprint.route("/kaiju/<id>", methods=['POST'])
+@kaiju_blueprint.route("/update/<int:id>", methods=['POST', 'GET'])
 def update_kaiju(id):
     try:
         name = request.form['name']
@@ -77,9 +86,9 @@ def update_kaiju(id):
         treatment_notes = request.form['treatment_notes']
         registered = request.form['registered']
         vet = vet_repository.select_single_vet(request.form['vet_id'])
-        kaiju = Kaiju(name, dob, kaiju_type, treatment_notes, vet, registered)
+        kaiju = Kaiju(name, dob, kaiju_type, treatment_notes, registered, vet)
         kaiju_repository.update_kaiju(kaiju)
-        return redirect('/kaiju')
+        return redirect('/kaiju/edit/')
     except (Exception) as error:
         print(error)
         return render_template('kaiju/error1.html')
@@ -123,3 +132,18 @@ def kaiju_meet_the_vet_team():
 @kaiju_blueprint.route("/kaiju/safetyadvice")
 def kaiju_safety_advice():
     return render_template('kaiju/safetyadvice.html')
+
+@kaiju_blueprint.route("/kaiju/other")
+def kaiju_other():
+    return render_template('kaiju/other.html')
+
+
+@kaiju_blueprint.route("/kaiju/vet", methods=['GET'])
+def edit_kaiju_vet():
+    try:
+        kaiju = kaiju_repository.select_all_kaiju()
+        vets = vet_repository.select_all_vets()
+        return render_template('kaiju/vet.html', all_kaiju=kaiju, all_vets=vets)
+    except (Exception) as error:
+        print(error)
+        return render_template('kaiju/error2.html')

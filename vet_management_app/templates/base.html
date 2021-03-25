@@ -1,26 +1,20 @@
-<!-- Base HTML, TBC -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"crossorigin="anonymous"> -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <title>Kaiju Vet Management App</title>
 </head>
 
 <body>
-    <!-- <header id="site-header">
-        <h1>Kaiju Vet Management App</h1> -->
         <nav>
             <ul class="menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/kaiju">Current Kaiju Selection</a></li>
-                <li><a href="/kaiju/show">See Individual Kaiju</a></li>
                 <li><a href="/kaiju/new">Add New Kaiju</a></li>
                 <li><a href="/kaiju/edit">Edit Existing Kaiju</a></li>
-                <li><a href="/kaiju/vet">Assign Vet To A Kaiju</a></li>
                 <li><a href="/kaiju/meetthevetteam">Current Vet Team</a></li>
                 <li><a href="/kaiju/safetyadvice">Safety Advice</a></li>
                 <li><a href="/kaiju/other">Misc Page</a></li>
@@ -28,18 +22,14 @@
         </nav>
     </header>
 
-    <!-- if needed, create CSS class for format of Jinga code block -->
-    <!-- <div class="container"> -->
-        <!-- Begin Jinja code block -->
         {% block content %} 
         {% endblock %}
-        <!-- End Jinja code block -->
+
     </div>
 
 {% block home %}
 {% endblock %}
 </body>
 <footer>
-    <!-- <h6>Kaiju Management App by Tim Sinnott</h6> -->
 </footer>
 </html>

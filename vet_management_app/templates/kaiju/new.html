@@ -5,43 +5,45 @@
   <h3>Kaiju New Page</h3>
 </header>
 
+
 <form action="/kaiju" method="POST">
-
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-  </div>
-  
-  <div>
-    <label for="dob">DOB:</label>
-    <input type="text" id="dob" name="dob" required autofocus>
-  </div>
-  
-  <div>
-    <label for="kaiju_type">Kaiju Type:</label>
-    <input type="text" id="kaiju_type" name="kaiju_type" required autofocus>
-  </div>
-  
-  <div>
-    <label for="treatment_notes">Treatment Notes:</label>
-    <input type="text" id="treatment_notes" name="treatment_notes" required autofocus>
-  </div>
-
-  <div>
-    <label for="registered">Registered:</label>
-    <input type="checkbox" id="registered" name="registered" required autofocus>
-  </div>
-
-  <div>
-    <label for="vet">Vet:</label>
-    <select name="vet_id" id="vet">
-      {% for vet in all_vets %}
-      <option value="{{vet.id}}">{{vet.name}}</option>
-      {% endfor %}
-    </select>
-  </div>
-
-  <button type="submit">Add Kaiju</button>
-
+<section class="table">
+  <ul class="form-style-1">
+    <li><label>Name <span class="required"></span></label><input type="text" id="name" name="name" required></li>
+    <li>
+      <label>DOB <span class="required"></span></label>
+      <input type="text" id="dob" name="dob" required autofocus>
+    </li>
+    <li>
+      <label>Kaiju Type<span class="required"></span></label>
+      <input type="text" id="kaiju_type" name="kaiju_type" required autofocus>
+    </li>
+    <li>
+      <label>Treatment Notes <span class="required"></span></label>
+      <input type="text" id="treatment_notes" name="treatment_notes" required autofocus>
+    </li>
+    <li>
+      <label>Registered</label><i id="registered" name="registered" required autofocus>
+      <select name="field4" class="field-select">
+        <option value="True">True</option>
+        <option value="False">False</option>
+      </select>
+    </li>
+    <li>
+      <div>
+        <label for="vet">Vet:</label>
+        <select name="vet_id" id="vet">
+          {% for vet in all_vets %}
+          <option value="{{vet.id}}">{{vet.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </li>
+    <li>
+      <button type="submit">Add Kaiju</button>
+    </li>
+  </ul>
 </form>
+</section>
+
 {% endblock %}

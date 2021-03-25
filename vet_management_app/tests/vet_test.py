@@ -15,6 +15,6 @@ class TestVet(unittest.TestCase):
         self.assertEqual("Dr. Daisuke Serizawa", self.vet.name)
 
     def test_many_kaiju_to_one_vet(self):
-        self.assertEqual(self.vet, self.kaiju_1.vet_id and self.kaiju_2.vet_id)
+        self.assertEqual(self.vet, self.kaiju_1.vet and self.kaiju_2.vet)
 
         

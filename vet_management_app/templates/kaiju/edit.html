@@ -7,68 +7,43 @@
 
 {% for kaiju in all_kaiju %}
 <section class="table">
-<form action="/kaiju/edit/{{kaiju.id}}" method="POST">
-
-  <div>
-    <label for="id">The Kaiju ID</label>
-    <input type="search" placeholder="Name" name="name" value={{kaiju.name}}>
-    <button type="button">Enter ID</button>
-  </div>
-
-<p></p>
-
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{kaiju.name}}">
-  </div>
-
-  <p></p>
-
-  <div>
-    <label for="dob">DOB:</label>
-    <input type="text" id="dob" name="dob" value="{{kaiju.dob}}">
-  </div>
-
-  <p></p>
-
-  <div>
-    <label for="kaiju_type">Kaiju Type:</label>
-    <input type="text" id="kaiju_type" name="kaiju_type" value="{{kaiju.kaiju_type}}">
-  </div>
-
-  <p></p>
-
-  <div>
-    <label for="treatment_notes">Treatment Notes:</label>
-    <input type="text" id="treatment_notes" name="treatment_notes" value="{{kaiju.treatment_notes}}">
-  </div>
-
-  <p></p>
-
-  <div>
-    <label for="vet">Vet:</label>
-    <select id="vet" name="vet">
-      {% for vet in all_vets %}
-        <option value="{{ vet.id }}"
-          {% if kaiju.vet.id == vet.id %} selected="selected"{% endif %}>
-          {{ vet.name }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
-  
-  <p></p>
-
-  <div>
-    <label for="registered">Registered:</label>
-    <input type="checkbox" id="registered" name="registered"value="{{kaiju.registered}}">
-  </div>
-
-  <p></p>
-
-  <button type="submit">Update Kaiju</button>
-
-</form>
+  <form action="/kaiju/edit" method="POST">
+    <ul class="form-style-1">
+      <li><label>Name <span class="required"></span></label><input type="text" id="name" name="name" value="{{kaiju.name}}"" required autofocus></li>
+      <li>
+        <label>DOB <span class="required"></span></label>
+        <input type="text" id="dob" name="dob" value="{{kaiju.dob}}" required autofocus>
+      </li>
+      <li>
+        <label>Kaiju Type<span class="required"></span></label>
+        <input type="text" id="kaiju_type" name="kaiju_type" value="{{kaiju.kaiju_type}}" required autofocus>
+      </li>
+      <li>
+        <label>Treatment Notes <span class="required"></span></label>
+        <input type="text" id="treatment_notes" name="treatment_notes" value="{{kaiju.treatment_notes}}" required autofocus>
+      </li>
+      <li>
+        <label>Registered</label><i id="registered" name="registered" value="{{kaiju.registered}}" required autofocus>
+        <select name="field4" class="field-select">
+          <option value="True">True</option>
+          <option value="False">False</option>
+        </select>
+      </li>
+      <li>
+        <div>
+          <label for="vet">Vet:</label>
+          <select name="vet_id" id="vet">
+            {% for vet in all_vets %}
+            <option value="{{vet.id}}">{{vet.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </li>
+      <li>
+        <button type="submit">Add Kaiju</button>
+      </li>
+    </ul>
+    </form>
 </section>
 {% endfor %}
 

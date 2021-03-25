@@ -31,7 +31,6 @@ kaiju_8 = Kaiju("Biollante", "1989", "Genetically-modified Rose/Crocodile/Ghost 
                 "Finding peace while simultaneously exploding", vet_5, True)
 kaiju_9 = Kaiju("Onibaba", "2016", "Category II", "Drop most of Tokyo on it", vet_3, True)
 kaiju_10 = Kaiju("Destoroyah", "1995", "Sea monster", "Godzilla in meltdown mode", vet_5, True)
-# kaiju_11 = Kaiju("Zilla", "1998", "Virgin Lizard", "Getting wreaked by the real Godzilla", None, False)
 
 kaiju_repository.save_kaiju(kaiju_1)
 kaiju_repository.save_kaiju(kaiju_2)
@@ -43,6 +42,5 @@ kaiju_repository.save_kaiju(kaiju_7)
 kaiju_repository.save_kaiju(kaiju_8)
 kaiju_repository.save_kaiju(kaiju_9)
 kaiju_repository.save_kaiju(kaiju_10)
-# kaiju_repository.save_kaiju(kaiju_11)
 
 pdb.set_trace()

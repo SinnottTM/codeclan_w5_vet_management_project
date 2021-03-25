@@ -23,7 +23,7 @@ class TestKaiju(unittest.TestCase):
         self.assertEqual("Finding peace while simultaneously exploding", self.kaiju_1.treatment_notes)
 
     def test_kaiju_has_vet(self):
-        self.assertEqual(self.kaiju_1.vet_id, self.vet)
+        self.assertEqual(self.kaiju_1.vet, self.vet)
 
     def test_kaiju_is_registered(self):
         self.assertEqual(self.kaiju_1.registered, True)
@@ -32,4 +32,4 @@ class TestKaiju(unittest.TestCase):
         self.assertEqual(self.kaiju_2.registered, False)
 
     def test_one_vet_to_many_kaiju(self):
-        self.assertEqual(self.kaiju_1.vet_id and self.kaiju_2.vet_id, self.vet)
+        self.assertEqual(self.kaiju_1.vet and self.kaiju_2.vet, self.vet)
