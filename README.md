@@ -35,16 +35,16 @@ To use this app, you must perform the following steps...
 Clone this repo
 Use Git to create a git folder and clone the repo to there.
 
-Create the database
+Create the database - 
 createdb kaiju_vets_database
 
-Create the database tables
+Create the database tables - 
 psql -d vet_db -f db/kaiju_vets_database.sql
 
-Populate the database (console.py is pre-set tp perform this action)
+Populate the database (console.py is pre-set tp perform this action) -
 python3 console.py
 
-Run the app (please ensure you have uploaded flask beforehand)
+Run the app (please ensure you have uploaded flask beforehand) -
 flask run
 
 I hope you enjoy and remember, I am still very much learning!
