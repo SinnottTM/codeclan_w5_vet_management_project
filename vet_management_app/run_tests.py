@@ -1,5 +1,3 @@
-# run_test file, working fine
-
 import unittest
 
 from tests.kaiju_test import TestKaiju

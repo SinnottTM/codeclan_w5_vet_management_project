@@ -130,3 +130,75 @@ select{
 	margin:0px;
 	outline: none;	
 }
+
+ul.bulletline li
+{
+  position: relative;
+   height: 3em;
+  color: rgb(0, 0, 0);
+}
+
+ul.bulletline li:before
+{
+    content: "";
+    display: inline-block;
+    height: 3em;
+    width: 1px;
+    background: #aaaa;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: -11px;
+    top: -0.4em;
+    z-index: -1;
+}
+
+ul.bulletline:before
+{
+  content: "●";
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: -1em;
+  top: 0.1em;
+  color: #aaa;
+}
+
+ul.bulletline:after
+{
+  content: "●";
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: -1em;
+  top: -1em;
+  color: #aaa;
+}
+
+.circle{
+    counter-reset: list-counter;
+    list-style: none;
+    float:left;
+}
+.circle li{
+    margin: 1.5em 0;    
+}
+.circle li:before{
+    content: counter(list-counter);
+    counter-increment: list-counter;
+    width: 1em;
+    height: 1em;
+    padding: .5em;
+    margin-right: 1em;
+    border-radius: 50%;
+    border: .25em solid #ccc;
+    background: #000;
+    color: #fff;
+    font-family: arial;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    
+}
