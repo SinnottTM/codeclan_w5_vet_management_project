@@ -31,8 +31,8 @@ I elected to make my app about Kaiju as... Kaiju are awesome.
 ### Project Brief
 
 **Vet Management App**
-
-  A veterinary practice has approached you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet.
+ 
+ A veterinary practice has approached you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet.
 
 -----------------------------------------------------------------------------
 
@@ -56,28 +56,28 @@ I elected to make my app about Kaiju as... Kaiju are awesome.
   
 -----------------------------------------------------------------------------
 
-### To use this app, you must perform the following steps...
+### To use this app, you must perform the following steps
 
 **Clone this repo:**
 
-  Use Git to create a git folder and clone the repo to there.
+ Use Git to create a git folder and clone the repo to there.
 
 **Create the database:**
 
-  Createdb kaiju_vets_database
+ Createdb kaiju_vets_database
 
 **Create the database tables:**
 
-  psql -d vet_db -f db/kaiju_vets_database.sql
+ psql -d vet_db -f db/kaiju_vets_database.sql
 
 **Populate the database (console.py is pre-set tp perform this action):**
 
-  python3 console.py
+ python3 console.py
 
 **Run the app (please ensure you have uploaded flask beforehand):**
 
-  Flask run
-  
+ Flask run
+
 -----------------------------------------------------------------------------
 
 *I hope you enjoy and remember, I am still very much learning!*
