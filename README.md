@@ -8,6 +8,10 @@ I elected to make my app about Kaiju as... Kaiju are awesome.
 
 -----------------------------------------------------------------------------
 
+![alt text](https://static.wikia.nocookie.net/godzilla/images/3/33/Godzilla_2021.jpg/revision/latest?cb=20210314011302 "Godzilla")
+
+-----------------------------------------------------------------------------
+
 ### Made using the following (languages and applications):
 
   *HTML*
